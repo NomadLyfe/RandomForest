@@ -41,10 +41,9 @@ class DecisionTree:
         return Node(best_feature, best_thresh, left, right)
 
     def _best_split(self, X, y, feat_idxs):
-        best_gain = -1
+        best_gain_so_far = -1
         split_idx, split_threshold = None, None
 
-        best_gain_so_far = 0
 
         for feat_idx in feat_idxs:
             X_column = X[:, feat_idx]
